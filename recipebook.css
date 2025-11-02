@@ -1,0 +1,204 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.mainpage {
+
+    height: fit-content;
+    width: fit-content;
+    overflow-x: none;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+main {
+    flex-grow: 1;
+}
+
+.navigation {
+    background: #3d2400;
+    background: linear-gradient(90deg, rgba(61, 36, 0, 0.86) 0%, rgba(173, 95, 0, 0.86) 35%, rgba(232, 197, 0, 0.86) 100%);
+    height: 80px;
+    padding: 15px;
+}
+
+.navlist {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+}
+
+#about {
+    margin-right: 50px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    gap: 30px;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(77, 77, 248);
+
+}
+
+a:active {
+    color: brown
+}
+
+#footer {
+    background: #3d2400;
+    background: linear-gradient(90deg, rgba(61, 36, 0, 0.86) 0%, rgba(173, 95, 0, 0.86) 35%, rgba(232, 197, 0, 0.86) 100%);
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.content_box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 1 45%;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+}
+
+#item {
+    background: #d9d4d4;
+    background: linear-gradient(90deg, rgba(217, 212, 212, 1) 0%, rgba(247, 243, 233, 1) 50%, rgba(255, 249, 194, 1) 100%);
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+    transition: all 0.5s linear;
+}
+
+#item:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.342);
+
+}
+
+
+#text {
+    height: auto;
+    width: 300px;
+    font-family: lato;
+    font-weight: bold;
+}
+
+.image_div {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 15px;
+    box-shadow: 1.5px 1.5px 2px rgba(27, 26, 26, 0.797);
+
+}
+
+.image {
+    height: 250px;
+    width: 250px;
+    border-radius: 15px;
+
+}
+
+.image_div .overlay {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgba(44, 42, 42, 0.734);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.image_div:hover .overlay {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .navigation{
+        height: 130px;
+    }
+    .navlist{
+        flex-direction: column;
+        align-items: center;
+        gap:30px
+    }
+    .content_box {
+        flex: 1 1 100%; /* Makes each recipe box take up the full width */
+    }
+
+    #item {
+        flex-direction: column; /* Stacks the text and image vertically */
+    }
+
+    #text, .image_div {
+        height: fit-content;
+        width: fit-content; /* Ensures text and image blocks are full width */
+    }
+    
+    .image {
+        height: auto; /* Adjusts image height automatically */
+        max-width: 100%; /* Prevents image from overflowing its container */
+    }
+}
